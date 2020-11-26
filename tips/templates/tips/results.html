@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+{% load render_table from django_tables2 %}
+{% block content %}
+  <article class="media content-section text-center">
+    <div class="media-body">
+      <div class="row">
+        <div class="col">
+          <h5 class="text-left text-muted mt-2 ml-2"><u>{{ user.profile.locatie}} {{ object.week }} by {{ object.user.username }}</u></h5>
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+<!--           <div class="text-right"> -->
+            <button class="btn btn-outline-info mr-2 mb-2" type="submit">Download</button>
+          <!-- </div> -->
+        </form>
+      </div>
+      <div class="ml-4 mr-4">
+          {% render_table results_table %}
+          <br>
+          <h5 class="text-center text-muted ml-2"><u>Run Totals:</u></h5>
+          <br>
+          {% render_table run_table %}
+      </div>
+    </div>
+  </article>
+{% endblock content %}
+

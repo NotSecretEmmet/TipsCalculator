@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <legend class="text-muted mb-4">History for {{ user.profile.locatie }} </legend>
+
+      {% if object_list %}
+        {% for run in object_list %}
+          <div class="row ml-4 mb-2">
+            <a href="{% url 'tips-results' run.pk %}" class="text-muted">{{ run.week }} On {{ run.run_dt }} By {{ run.user.username }}</a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="row ml-4 mb-2">
+          <h6 class="text-muted">Nothing to display.</h6>
+        </div>
+      {% endif %}
+    </div>
+  </article>
+{% endblock content %}

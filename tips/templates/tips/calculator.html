@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="mb-4 text-muted mt-2">Calculator</legend>
+               <div class = "ml-4">{{ form|crispy }}</div>
+          </fieldset>
+          <div class="form-group text-center">
+              <button class="btn btn-outline-info" type="submit">Brrrrrrrrrrr</button>
+          </div>
+      </form>
+    </div>
+  </article>
+{% endblock content %}
