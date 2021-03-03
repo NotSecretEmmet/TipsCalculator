@@ -7,7 +7,6 @@ Outputs the amount of tips and hours worked per employee per department.
 
 ## Demo:
 ![Demo](/media//DEMO.gif)
-![Demo](https://tmpfiles.org/dl/164899/DEMO.gif)
 
 ## Project Summary:
 Built as a favour for a friend who runs a restaurant.
